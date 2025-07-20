@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="Quick tornado response guide for Bangladesh - Emergency steps to stay safe during tornado disasters.">
+  <title>Tornado Emergency Guide - Bangladesh | ResQ</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/rstyle.css">
+  <link rel="icon" href="img/roundlogo.png">
+  <style>
+    /* CSS Reset and Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-dark: #141311;
+      --color-primary: #574537;
+      --color-secondary: #C1B7AD;
+      --color-light-gray: #D7D2CF;
+      --color-background: #F7F7F7;
+      --color-white: #FFFFFF;
+      --color-alert: #E53935;
+      --color-warning: #FF8F00;
+      --color-success: #4CAF50;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+      --transition-standard: all 0.3s ease;
+    }
+
+    html {
+      font-size: 62.5%; /* 10px = 1rem */
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      line-height: 1.7;
+      color: var(--color-dark);
+      background-color: var(--color-background);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 { font-size: 4.5rem; }
+    h2 { font-size: 3.5rem; }
+    h3 { font-size: 2.8rem; }
+    h4 { font-size: 2.2rem; }
+
+    p { margin-bottom: 1.5rem; }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: var(--transition-standard);
+    }
+
+    a:hover { color: var(--color-dark); }
+
+    ul { list-style: none; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 3rem;
+      border-radius: 0.8rem;
+      font-weight: 600;
+      font-size: 1.8rem;
+      transition: var(--transition-standard);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-alert {
+      background-color: var(--color-alert);
+      color: var(--color-white);
+    }
+
+    .btn-alert:hover {
+      background-color: #c62828;
+      color: var(--color-white);
+    }
+
+    /* Header/Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition-standard);
+      padding: 1.5rem 0;
+      background-color: var(--color-background);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* .logo {
+      display: flex;
+      align-items: center;
+      transition: var(--transition-standard);
+    }
+
+    .logo-placeholder {
+      width: 6rem;
+      height: 6rem;
+      margin-right: 1.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 2.5rem;
+      font-weight: bold;
+    } */
+
+    .logo-text h1 {
+      color: var(--color-primary);
+      font-size: 2.4rem;
+      margin-bottom: 0;
+      transition: var(--transition-standard);
+    }
+
+    .logo-text h1 span {
+      color: var(--color-dark);
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--color-primary);
+      margin-bottom: 0;
+      transition: var(--transition-standard);
+    }
+
+    .emergency-call {
+      background-color: var(--color-alert);
+      color: var(--color-white);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1.6rem;
+      text-decoration: none;
+    }
+
+    .emergency-call:hover {
+      background-color: #c62828;
+      color: var(--color-white);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 10rem;
+    }
+
+    /* Hero Section */
+    .hero-emergency {
+      background: linear-gradient(rgba(87, 69, 55, 0.8), rgba(20, 19, 17, 0.6)), 
+                  url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600') center/cover;
+      color: var(--color-white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero-emergency h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero-emergency p {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    .emergency-numbers {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .emergency-number {
+      background-color: rgba(255,255,255,0.9);
+      color: var(--color-dark);
+      padding: 1.5rem 2.5rem;
+      border-radius: 1rem;
+      font-weight: 700;
+      font-size: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Quick Action Section */
+    .quick-actions {
+      background-color: var(--color-white);
+      padding: 3rem 0;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 2rem;
+    }
+
+    .action-card {
+      background: var(--color-white);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      text-align: center;
+      border: 3px solid var(--color-secondary);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-standard);
+    }
+
+    .action-card:first-child {
+      border-color: var(--color-alert);
+    }
+
+    .action-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .action-icon {
+      font-size: 5rem;
+      margin-bottom: 2rem;
+    }
+
+    .action-title {
+      font-size: 2.6rem;
+      color: var(--color-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .action-description {
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    /* Step Sections */
+    .step-section {
+      padding: 4rem 0;
+    }
+
+    .step-section:nth-child(even) {
+      background-color: var(--color-white);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--color-dark);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8rem;
+      height: 0.4rem;
+      background-color: var(--color-primary);
+    }
+
+    .steps-list {
+      max-width: 90rem;
+      margin: 0 auto;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      padding: 3rem;
+      background: var(--color-white);
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border-left: 6px solid var(--color-primary);
+    }
+
+    .step-number {
+      min-width: 5rem;
+      height: 5rem;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-right: 2rem;
+    }
+
+    .step-content h4 {
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+    }
+
+    .step-content p {
+      color: var(--color-primary);
+      font-size: 1.9rem;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    /* Resource Cards */
+    .resources-section {
+      background-color: var(--color-light-gray);
+      padding: 4rem 0;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .resource-card {
+      background: var(--color-white);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-standard);
+    }
+
+    .resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .resource-icon {
+      width: 6rem;
+      height: 6rem;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      color: var(--color-white);
+      font-size: 2.5rem;
+    }
+
+    .resource-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--color-dark);
+    }
+
+    .resource-contact {
+      font-size: 1.8rem;
+      color: var(--color-alert);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .resource-description {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+    }
+
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      html {
+        font-size: 55%; /* 8.8px = 1rem */
+      }
+
+      .hero-emergency h1 {
+        font-size: 3.5rem;
+      }
+
+      .emergency-numbers {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .step-number {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .step-section {
+        padding: 3rem 0;
+      }
+
+      .step-item {
+        padding: 1.5rem;
+      }
+
+      html {
+        font-size: 50%; /* 8px = 1rem */
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <!-- Empty logo placeholder for future PNG logo -->
+          <div class="logo-placeholder">
+            <img src="img/roundlogo.png" alt="ResQ Logo">
+          </div>
+          <div class="logo-text">
+            <h1>ResQ<span>:</span></h1>
+            <p class="tagline">Chaos To Control</p>
+          </div>
+        </div>
+        
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.php"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+          </ul>
+          <div class="nav-actions">
+            <!-- <button class="search-btn" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button> -->
+            <a href="needhelp.php" class="btn btn-alert"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a>
+            <a href="login.php" class="btn btn-neutral"><i class="fa-solid fa-sign-in"></i> Login</a>
+          </div>
+        </nav>
+        
+        <div class="nav-mobile">
+          <button class="search-btn-mobile" aria-label="Search"><i class="fa-solid fa-search"></i></button>
+          <a href="needhelp.php" class="help-btn-mobile"><i class="fa-solid fa-circle-exclamation"></i></a>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile search (hidden by default) -->
+      <div id="mobile-search" class="mobile-search">
+        <div class="search-container">
+          <input type="text" placeholder="Search for disasters or resources...">
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu">
+        <nav>
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.html"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+            <li class="divider"></li>
+            <li><a href="needhelp.php" class="mobile-alert-btn"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a></li>
+            <li><a href="login.php"><i class="fa-solid fa-sign-in"></i> Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Emergency Hero -->
+    <section class="hero-emergency">
+      <div class="container">
+        <h1>🌪️ Tornado Emergency Guide</h1>
+        <p>Quick actions to stay safe during tornadoes in Bangladesh</p>
+        
+        <div class="emergency-numbers">
+          <div class="emergency-number">
+            <i class="fa-solid fa-phone"></i> 999 - Emergency
+          </div>
+          <div class="emergency-number">
+            <i class="fa-solid fa-house-crack"></i> 1070 - Disaster Control
+          </div>
+          <div class="emergency-number">
+            <i class="fa-solid fa-radio"></i> 1096 - Weather Updates
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <div class="container">
+        <h2 class="section-title">⚡ Immediate Actions</h2>
+        
+        <div class="action-grid">
+          <div class="action-card">
+            <div class="action-icon">🏠</div>
+            <h3 class="action-title">Seek Shelter Immediately</h3>
+            <p class="action-description">Go to the lowest level of a sturdy building, preferably a basement or storm cellar</p>
+          </div>
+          
+          <div class="action-card">
+            <div class="action-icon">🚪</div>
+            <h3 class="action-title">Find Safe Spot</h3>
+            <p class="action-description">Stay in an interior room or hallway away from windows, doors and outside walls</p>
+          </div>
+          
+          <div class="action-card">
+            <div class="action-icon">🛏️</div>
+            <h3 class="action-title">Protect Yourself</h3>
+            <p class="action-description">Cover yourself with blankets or get under sturdy furniture to protect from debris</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warning Signs -->
+    <section class="step-section">
+      <div class="container">
+        <h2 class="section-title">🔍 Warning Signs & Preparation</h2>
+        
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Dark, Greenish Sky</h4>
+              <p>The sky may appear dark and greenish, which is a sign of severe weather conditions that could produce tornadoes.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Large Hail</h4>
+              <p>Large hail without rain can sometimes precede tornadoes, especially in the absence of thunderstorms.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Loud Roaring Sound</h4>
+              <p>A loud, continuous roar or rumble that doesn't fade like thunder may indicate an approaching tornado.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Debris Cloud</h4>
+              <p>A visible rotating cloud of debris can mark the location of a tornado even if a funnel is not visible.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Prepare Safe Room</h4>
+              <p>Identify the safest room in your home (basement, interior room on lowest floor) and practice tornado drills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- During Tornado -->
+    <section class="step-section">
+      <div class="container">
+        <h2 class="section-title">🚨 During a Tornado</h2>
+        
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>If in a House</h4>
+              <p>Go to the basement or an interior room on the lowest floor. Stay away from corners, windows, doors and outside walls.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>If in a Mobile Home</h4>
+              <p>Get out immediately and go to the lowest floor of a sturdy nearby building or storm shelter.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>If Outdoors</h4>
+              <p>Seek shelter immediately. If no shelter is available, lie flat in a ditch or low-lying area and cover your head.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>If in a Vehicle</h4>
+              <p>Do not try to outrun a tornado. Either park the car and get into a sturdy building, or if no building is available, lie flat in a ditch away from the vehicle.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Protect Your Head</h4>
+              <p>Use your arms to protect your head and neck, and cover yourself with blankets, coats or cushions if possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- After Tornado -->
+    <section class="step-section">
+      <div class="container">
+        <h2 class="section-title">🏠 After a Tornado</h2>
+        
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Check for Injuries</h4>
+              <p>Check yourself and others for injuries. Provide first aid if trained. Do not move seriously injured people unless they're in immediate danger.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Watch for Hazards</h4>
+              <p>Be aware of broken glass, downed power lines, gas leaks, and structural damage. Wear sturdy shoes and protective clothing when walking through debris.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Turn Off Utilities</h4>
+              <p>Turn off gas, electricity, and water if you suspect damage or if instructed to do so by authorities.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Listen to Authorities</h4>
+              <p>Monitor battery-powered radio for emergency information. Follow instructions from local officials.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Help Neighbors</h4>
+              <p>Check on neighbors, especially elderly or disabled people who may need assistance.</p>
+            </div>
+          </div>
+          
+          <div class="step-item">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>Document Damage</h4>
+              <p>Take photos of damage for insurance claims before cleaning up. Contact your insurance company as soon as possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources-section">
+      <div class="container">
+        <h2 class="section-title">📞 Emergency Contacts</h2>
+        
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon">🚨</div>
+            <h3 class="resource-title">Emergency Services</h3>
+            <p class="resource-contact">999</p>
+            <p class="resource-description">Fire, police, ambulance</p>
+          </div>
+          
+          <div class="resource-card">
+            <div class="resource-icon">🏛️</div>
+            <h3 class="resource-title">Disaster Management</h3>
+            <p class="resource-contact">1070</p>
+            <p class="resource-description">Government disaster response</p>
+          </div>
+          
+          <div class="resource-card">
+            <div class="resource-icon">🌦️</div>
+            <h3 class="resource-title">Weather Updates</h3>
+            <p class="resource-contact">1096</p>
+            <p class="resource-description">Severe weather alerts</p>
+          </div>
+          
+          <div class="resource-card">
+            <div class="resource-icon">🏥</div>
+            <h3 class="resource-title">Health Emergency</h3>
+            <p class="resource-contact">16263</p>
+            <p class="resource-description">Medical emergency hotline</p>
+          </div>
+          
+          <div class="resource-card">
+            <div class="resource-icon">⚡</div>
+            <h3 class="resource-title">Utility Emergency</h3>
+            <p class="resource-contact">16123</p>
+            <p class="resource-description">Gas, electricity, water</p>
+          </div>
+          
+          <div class="resource-card">
+            <div class="resource-icon">🏠</div>
+            <h3 class="resource-title">Shelter Information</h3>
+            <p class="resource-contact">1070 (ext 3)</p>
+            <p class="resource-description">Emergency shelter locations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="logo-placeholder">
+                <div class="logo-placeholder">
+                    <img src="img/roundlogo.png" alt="ResQ Logo">
+                  </div>
+            </div>
+            <div class="logo-text">
+              <h3>ResQ<span>:</span></h3>
+              <p>Chaos To Control</p>
+            </div>
+          </div>
+          <p>ResQ is dedicated to providing immediate response and long-term recovery solutions for communities affected by natural disasters.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Disaster Updates</a></li>
+            <li><a href="#">How We Help</a></li>
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="emer_cont.html">Emergency Preparedness</a></li>
+            <li><a href="#">Disaster Response Guide</a></li>
+            <li><a href="#">Relief Programs</a></li>
+            <li><a href="#">Training Workshops</a></li>
+            <li><a href="#">Community Resilience</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i> Emergency: +1-800-555-RESQ</li>
+            <li><i class="fa-solid fa-envelope"></i> info@resq-disaster.org</li>
+            <li><i class="fa-solid fa-location-dot"></i> 123 Response Avenue, Resilience City, RC 10001</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 ResQ Disaster Management. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple interactive features
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Tornado Emergency Guide loaded successfully');
+      
+      // Add wind animation to demonstrate tornado
+      const hero = document.querySelector('.hero-emergency');
+      let windTimeout;
+      
+      function addWindEffect() {
+        hero.style.animation = 'wind 1s ease-in-out';
+        setTimeout(() => {
+          hero.style.animation = '';
+        }, 1000);
+      }
+      
+      // Wind effect every 30 seconds for demo
+      setInterval(addWindEffect, 30000);
+      
+      // Add CSS for wind animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes wind {
+          0%, 100% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(-5px) translateY(-2px); }
+          50% { transform: translateX(5px) translateY(2px); }
+          75% { transform: translateX(5px) translateY(-2px); }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="ResQ: Providing immediate response and long-term recovery solutions for communities affected by disasters. Get emergency assistance, resources, and support.">
+  <title>ResQ: Chaos To Control | Disaster Management</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/rstyle.css">
+  <link rel="icon" href="img/roundlogo.png">
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="ResQ: Disaster Management Solutions" />
+  <meta property="og:description" content="Providing immediate response and recovery solutions for communities affected by disasters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://resq-disaster.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630" />
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <!-- Empty logo placeholder for future PNG logo -->
+          <div class="logo-placeholder">
+            <img src="img/roundlogo.png" alt="ResQ Logo">
+          </div>
+          <div class="logo-text">
+            <h1>ResQ<span>:</span></h1>
+            <p class="tagline">Chaos To Control</p>
+          </div>
+        </div>
+        
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.php"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+          </ul>
+          <div class="nav-actions">
+            <!-- <button class="search-btn" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button> -->
+            <a href="needhelp.php" class="btn btn-alert"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a>
+            <a href="login.php" class="btn btn-neutral"><i class="fa-solid fa-sign-in"></i> Login</a>
+          </div>
+        </nav>
+        
+        <div class="nav-mobile">
+          <button class="search-btn-mobile" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button>
+          <a href="needhelp.php" class="help-btn-mobile"><i class="fa-solid fa-circle-exclamation"></i></a>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile search (hidden by default) -->
+      <div id="mobile-search" class="mobile-search">
+        <div class="search-container">
+          <input type="text" placeholder="Search for disasters or resources...">
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu">
+        <nav>
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.php"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+            <li class="divider"></li>
+            <li><a href="needhelp.php" class="mobile-alert-btn"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a></li>
+            <li><a href="login.php"><i class="fa-solid fa-sign-in"></i> Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+ 
+  <br><br><br>
+  <!-- Emergency Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Emergency Contacts</h2>
+        <p class="section-subtitle">Contacts to receive immediate assistance for communities in need</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="img/paramedics.jpg" alt="Medical aid team">
+          </div>
+          <div class="service-content">
+            <h3>Medical Response</h3>
+            <p>Emergency medical services and first aid for disaster victims, including field hospitals and mobile clinics.</p>
+            <a href="emg_medic.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        
+        <div class="service-card">
+          <div class="service-img">
+            <img src="img/fireservice.jpg" alt="Fire Service">
+          </div>
+          <div class="service-content">
+            <h3>Fire service</h3>
+            <p>Rapid-response emergency fire service safeguarding lives and property during disasters, 24/7 without delay.</p>
+            <a href="emg_fireservice.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-img">
+            <img src="img/police.jpg" alt="Police">
+          </div>
+          <div class="service-content">
+            <h3>Police</h3>
+            <p>Dedicated emergency police service ensuring safety, order, and swift response during disaster situations, anytime.</p>
+            <a href="emg_police.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="img/ngpbd.jpg" alt="Medical aid team">
+          </div>
+          <div class="service-content">
+            <h3>NGO Helplines</h3>
+            <p>NGOs deliver rapid relief, resources, and compassionate support to communities affected during disasters.</p>
+            <a href="emg_ngo.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Evacuation process">
+          </div>
+          <div class="service-content">
+            <h3>Evacuation Support</h3>
+            <p>Coordinated evacuation operations to safely relocate communities from disaster zones to secure shelters.</p>
+            <a href="emg_evac.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Supply distribution">
+          </div>
+          <div class="service-content">
+            <h3>Supply Distribution</h3>
+            <p>Essential supplies including food, water, blankets, and hygiene kits delivered to affected communities.</p>
+            <a href="emg_relief.php" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- CTA Section
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Make a Difference?</h2>
+        <p>Join our network of volunteers or donate to support communities in need.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary btn-lg">Volunteer Now</a>
+          <a href="#" class="btn btn-outline btn-lg">Donate</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="logo-placeholder">
+                <div class="logo-placeholder">
+                    <img src="img/roundlogo.png" alt="ResQ Logo">
+                  </div>
+            </div>
+            <div class="logo-text">
+              <h3>ResQ<span>:</span></h3>
+              <p>Chaos To Control</p>
+            </div>
+          </div>
+          <p>ResQ is dedicated to providing immediate response and long-term recovery solutions for communities affected by natural disasters.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Disaster Updates</a></li>
+            <li><a href="#">How We Help</a></li>
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Emergency Preparedness</a></li>
+            <li><a href="#">Disaster Response Guide</a></li>
+            <li><a href="#">Relief Programs</a></li>
+            <li><a href="#">Training Workshops</a></li>
+            <li><a href="#">Community Resilience</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i> Emergency: +1-800-555-RESQ</li>
+            <li><i class="fa-solid fa-envelope"></i> info@resq-disaster.org</li>
+            <li><i class="fa-solid fa-location-dot"></i> 123 Response Avenue, Resilience City, RC 10001</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 ResQ Disaster Management. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

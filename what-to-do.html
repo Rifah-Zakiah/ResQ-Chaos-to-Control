@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="ResQ: Learn what to do during different disasters. Find practical advice for earthquakes, floods, tornadoes, fires, cyclones, and river erosion.">
+  <title>What to do? | ResQ: Chaos To Control</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/rstyle.css">
+  <link rel="icon" href="img/roundlogo.png">
+  <style>
+    /* Additional CSS for What to do page */
+    .what-to-do {
+      padding: 12rem 0 8rem;
+    }
+
+    .disaster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+      margin-top: 5rem;
+    }
+
+    .disaster-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .disaster-circle {
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+      background-color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      border: 2px solid var(--color-light-gray);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .disaster-circle:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+
+    .disaster-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-standard);
+    }
+
+    .disaster-circle:hover img {
+      transform: scale(1.05);
+    }
+
+    .disaster-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 19, 17, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition-standard);
+    }
+
+    .disaster-circle:hover .disaster-overlay {
+      opacity: 1;
+    }
+
+    .disaster-overlay-content {
+      color: var(--color-white);
+    }
+
+    .disaster-overlay-content i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .disaster-overlay-content p {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .disaster-title {
+      font-size: 2rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .disaster-description {
+      color: var(--color-dark);
+      font-size: 1.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .disaster-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .disaster-circle {
+        width: 18rem;
+        height: 18rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .disaster-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .disaster-circle {
+        width: 22rem;
+        height: 22rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <!-- Logo -->
+          <div class="logo-placeholder">
+            <img src="img/roundlogo.png" alt="ResQ Logo">
+          </div>
+          <div class="logo-text">
+            <h1>ResQ<span>:</span></h1>
+            <p class="tagline">Chaos To Control</p>
+          </div>
+        </div>
+        
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.php"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html" class="active"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+          </ul>
+          <div class="nav-actions">
+            <!-- <button class="search-btn" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button> -->
+            <a href="needhelp.php" class="btn btn-alert"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a>
+            <a href="login.php" class="btn btn-neutral"><i class="fa-solid fa-sign-in"></i> Login</a>
+          </div>
+        </nav>
+        
+        <div class="nav-mobile">
+          <button class="search-btn-mobile" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button>
+          <a href="needhelp.php" class="help-btn-mobile"><i class="fa-solid fa-circle-exclamation"></i></a>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile search (hidden by default) -->
+      <div id="mobile-search" class="mobile-search">
+        <div class="search-container">
+          <input type="text" placeholder="Search for disasters or resources...">
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </div>
+      
+      <!-- Mobile menu (hidden by default) -->
+      <div id="mobile-menu" class="mobile-menu">
+        <nav>
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.html"><i class="fa-solid fa-map-pin"></i> Shelter</a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html" class="active"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+            <li class="divider"></li>
+            <li><a href="needhelp.php" class="mobile-alert-btn"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a></li>
+            <li><a href="login.php"><i class="fa-solid fa-sign-in"></i> Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- What to do Section -->
+  <section class="what-to-do">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What to do?</h2>
+        <p class="section-subtitle">Learn how to prepare, respond, and stay safe during different types of disasters</p>
+      </div>
+      
+      <div class="disaster-grid">
+        <!-- Earthquake -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('earthquake')">
+            <img src="img/earthquake.png" alt="Earthquake">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="earthquake.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">Earthquake</h3>
+          <p class="disaster-description">How to prepare and respond during an earthquake</p>
+        </div>
+        
+        <!-- Flood -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('flood')">
+            <img src="img/floods.png" alt="Flood">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="flood.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">Flood</h3>
+          <p class="disaster-description">Safety measures before, during, and after a flood</p>
+        </div>
+        
+        <!-- Tornado -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('tornado')">
+            <img src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Tornado">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="tornado.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">Tornado</h3>
+          <p class="disaster-description">How to identify warnings and find shelter during tornadoes</p>
+        </div>
+        
+        <!-- Fire -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('fire')">
+            <img src="img/firebd.png" alt="Fire">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="fire.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">Fire</h3>
+          <p class="disaster-description">Fire safety and evacuation procedures</p>
+        </div>
+        
+        <!-- Cyclone -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('cyclone')">
+            <img src="img/cyclone.png" alt="Cyclone">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="cyclone.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">Cyclone</h3>
+          <p class="disaster-description">Preparation and response during cyclones and hurricanes</p>
+        </div>
+        
+        <!-- River Erosion -->
+        <div class="disaster-item">
+          <div class="disaster-circle" onclick="navigateToDisaster('rivererosion.html')">
+            <img src="img/rivererosion.png" alt="River Erosion">
+            <div class="disaster-overlay">
+              <div class="disaster-overlay-content">
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="rivererosion.html"><p>Learn More</p></a>
+              </div>
+            </div>
+          </div>
+          <h3 class="disaster-title">River Erosion</h3>
+          <p class="disaster-description">Understanding risks and management of river erosion</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="logo-placeholder">
+          <img src="img/roundlogo.png" alt="ResQ Logo">
+        </div>
+          
+          <div class="logo-text">
+            
+            <h3>ResQ<span>:</span></h3>
+            <p>Chaos To Control</p>
+          </div>
+        <p>ResQ is dedicated to providing immediate response and long-term recovery solutions for communities affected by natural disasters.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Disaster Updates</a></li>
+          <li><a href="#">How We Help</a></li>
+          <li><a href="volunteerregistration.php">Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="emer_cont.html">Emergency Preparedness</a></li>
+          <li><a href="what-to-do.html">Disaster Response Guide</a></li>
+          <li><a href="#">Relief Programs</a></li>
+          <li><a href="#">Training Workshops</a></li>
+          <li><a href="#">Community Resilience</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i> Emergency: +1-800-555-RESQ</li>
+          <li><i class="fa-solid fa-envelope"></i> info@resq-disaster.org</li>
+          <li><i class="fa-solid fa-location-dot"></i> 123 Response Avenue, Resilience City, RC 10001</li>
+        </ul>
+        <div class="newsletter">
+          <h4>Subscribe to our newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 ResQ Disaster Management. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const searchBtn = document.querySelector('.search-btn-mobile');
+      const mobileSearch = document.getElementById('mobile-search');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('show');
+          if (mobileSearch.classList.contains('show')) {
+            mobileSearch.classList.remove('show');
+          }
+        });
+      }
+      
+      if (searchBtn && mobileSearch) {
+        searchBtn.addEventListener('click', function() {
+          mobileSearch.classList.toggle('show');
+          if (mobileMenu.classList.contains('show')) {
+            mobileMenu.classList.remove('show');
+          }
+        });
+      }
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Disaster item navigation
+    function navigateToDisaster(disasterType) {
+      // You can replace this with actual navigation
+      console.log(`Navigating to ${disasterType} page`);
+      // For example: window.location.href = `${disasterType}.html`;
+      alert(`You clicked on ${disasterType}. This will navigate to the ${disasterType} information page.`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="Donate to ResQ - Support disaster relief efforts and help communities rebuild after emergencies">
+  <title>Donate | ResQ: Chaos To Control</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="icon" href="img/roundlogo.png">
+  
+  <style>
+    /* Reset and Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-dark: #141311;
+      --color-primary: #574537;
+      --color-secondary: #C1B7AD;
+      --color-light-gray: #D7D2CF;
+      --color-background: #F7F7F7;
+      --color-white: #FFFFFF;
+      --color-alert: #E53935;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+      --transition-standard: all 0.3s ease;
+    }
+
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: var(--color-dark);
+      background-color: var(--color-background);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header Styles - Same as original */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition-standard);
+      padding: 2rem 0;
+      background-color: var(--color-background);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      transition: var(--transition-standard);
+    }
+
+    .logo-placeholder {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1.5rem;
+      background-color: transparent;
+    }
+
+    .logo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .logo-text h1 {
+      color: var(--color-primary);
+      font-size: 2rem;
+      margin-bottom: 0;
+      transition: var(--transition-standard);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-text h1 span {
+      color: var(--color-dark);
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--color-primary);
+      margin-bottom: 0;
+      transition: var(--transition-standard);
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-desktop ul {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-desktop a {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      color: var(--color-dark);
+      font-size: 1.4rem;
+      font-weight: 500;
+      transition: var(--transition-standard);
+      text-decoration: none;
+    }
+
+    .nav-desktop a:hover {
+      color: var(--color-primary);
+      background-color: var(--color-light-gray);
+    }
+
+    .nav-desktop a i {
+      margin-right: 0.6rem;
+      font-size: 1.4rem;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      margin-left: 1.5rem;
+      gap: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem 2.4rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: var(--transition-standard);
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+    }
+
+    .btn-alert {
+      background-color: var(--color-alert);
+      color: var(--color-white);
+    }
+
+    .btn-neutral {
+      background-color: var(--color-background);
+      color: var(--color-dark);
+      border: 1px solid var(--color-secondary);
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-dark);
+      transform: translateY(-2px);
+    }
+
+    .search-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-dark);
+      padding: 0.8rem;
+      border-radius: 50%;
+      transition: var(--transition-standard);
+    }
+
+    /* Donate Main Content */
+    .donate-main {
+      min-height: 100vh;
+      padding-top: 12rem;
+      padding-bottom: 8rem;
+      background: linear-gradient(135deg, var(--color-background) 0%, var(--color-light-gray) 100%);
+    }
+
+    .donate-hero {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .donate-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      color: var(--color-dark);
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .donate-subtitle {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .donate-description {
+      font-size: 1.6rem;
+      color: var(--color-dark);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    .donation-container {
+      max-width: 90rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .donation-card {
+      background: var(--color-white);
+      padding: 4rem;
+      border-radius: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .donation-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .amount-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .amount-btn {
+      padding: 1.5rem;
+      border: 2px solid var(--color-light-gray);
+      background: var(--color-background);
+      border-radius: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      cursor: pointer;
+      transition: var(--transition-standard);
+    }
+
+    .amount-btn:hover,
+    .amount-btn.active {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .custom-amount {
+      margin-bottom: 2rem;
+    }
+
+    .custom-amount label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-dark);
+    }
+
+    .custom-amount input {
+      width: 100%;
+      padding: 1.5rem;
+      border: 2px solid var(--color-light-gray);
+      border-radius: 1rem;
+      font-size: 1.6rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .custom-amount input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+
+    .payment-methods {
+      margin-bottom: 3rem;
+    }
+
+    .payment-methods h4 {
+      font-size: 1.8rem;
+      color: var(--color-dark);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .payment-option {
+      padding: 2rem;
+      border: 2px solid var(--color-light-gray);
+      border-radius: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      background: var(--color-background);
+    }
+
+    .payment-option:hover,
+    .payment-option.selected {
+      border-color: var(--color-primary);
+      background: var(--color-white);
+    }
+
+    .payment-option i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+
+    .payment-option span {
+      display: block;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+
+    .bkash-icon {
+      color: #E2136E !important;
+    }
+
+    .nogod-icon {
+      color: #EB1E26 !important;
+    }
+
+    .donate-btn {
+      width: 100%;
+      padding: 2rem;
+      background: var(--color-alert);
+      color: var(--color-white);
+      border: none;
+      border-radius: 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-standard);
+    }
+
+    .donate-btn:hover {
+      background: #c62828;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .impact-info {
+      margin-top: 4rem;
+      padding: 3rem;
+      background: rgba(87, 69, 55, 0.05);
+      border-radius: 1.5rem;
+      text-align: center;
+    }
+
+    .impact-info h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-primary);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .impact-stat {
+      text-align: center;
+    }
+
+    .impact-stat .number {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--color-alert);
+      display: block;
+    }
+
+    .impact-stat .text {
+      font-size: 1.4rem;
+      color: var(--color-dark);
+    }
+
+    /* Footer - Same as original */
+    .footer {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-about {
+      max-width: 35rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo .logo-placeholder {
+      width: 4rem;
+      height: 4rem;
+      background-color: var(--color-primary);
+      border-radius: 0.5rem;
+      margin-right: 1rem;
+    }
+
+    .footer-logo h3 {
+      color: var(--color-white);
+      margin-bottom: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-logo h3 span {
+      color: var(--color-primary);
+    }
+
+    .footer-logo p {
+      color: var(--color-light-gray);
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .footer-about p {
+      color: var(--color-light-gray);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 1.8rem;
+      transition: var(--transition-standard);
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-links h3 {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--color-light-gray);
+      transition: var(--transition-standard);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-white);
+      padding-left: 0.5rem;
+    }
+
+    .footer-contact h3 {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-contact ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: var(--color-light-gray);
+    }
+
+    .footer-contact i {
+      color: var(--color-primary);
+      margin-right: 1rem;
+      width: 2rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid var(--color-secondary);
+      color: var(--color-light-gray);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .nav-desktop {
+        display: none;
+      }
+
+      .donate-title {
+        font-size: 3.5rem;
+      }
+
+      .donation-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .donation-card {
+        padding: 3rem 2rem;
+        margin: 0 1rem;
+      }
+
+      .amount-options {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .impact-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .donate-title {
+        font-size: 2.8rem;
+      }
+
+      .donation-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .amount-options {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navigation - Same as original -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <div class="logo-placeholder">
+            <img src="img/roundlogo.png" alt="ResQ Logo">
+          </div>
+          <div class="logo-text">
+            <h1>ResQ<span>:</span></h1>
+            <p class="tagline">Chaos To Control</p>
+          </div>
+        </div>
+        
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="resq.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="emer_cont.html"><i class="fa-solid fa-life-ring"></i> Emergency Contacts</a></li>
+            <li><a href="search_shelter.php"><i class="fa-solid fa-map-pin"></i> Shelter </a></li>
+            <li><a href="donate.html"><i class="fa-solid fa-hand-holding-dollar"></i> Donate</a></li>
+            <li><a href="what-to-do.html"><i class="fa-solid fa-book"></i> What to do?</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-users"></i> About Us</a></li>
+          </ul>
+          <div class="nav-actions">
+            <!-- <button class="search-btn" aria-label="Search"><i class="fa-solid fa-search"></i><a href="search.html"></a></button> -->
+            <a href="needhelp.php" class="btn btn-alert"><i class="fa-solid fa-circle-exclamation"></i> Need Help</a>
+            <a href="login.php" class="btn btn-neutral"><i class="fa-solid fa-sign-in"></i> Login</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Donate Main Content -->
+  <main class="donate-main">
+    <div class="container">
+      <div class="donate-hero">
+        <h1 class="donate-title">Support Our Mission</h1>
+        <p class="donate-subtitle">Help us provide immediate disaster relief</p>
+        <p class="donate-description">Your donation helps us provide emergency response, supplies, and long-term recovery support to communities affected by disasters.</p>
+      </div>
+
+      <div class="donation-container">
+        <!-- One-time Donation -->
+        <div class="donation-card">
+          <h3><i class="fa-solid fa-heart"></i> One-time Donation</h3>
+          
+          <div class="amount-options">
+            <button class="amount-btn" data-amount="500">৳500</button>
+            <button class="amount-btn" data-amount="1000">৳1,000</button>
+            <button class="amount-btn" data-amount="2000">৳2,000</button>
+            <button class="amount-btn" data-amount="5000">৳5,000</button>
+            <button class="amount-btn" data-amount="10000">৳10,000</button>
+            <button class="amount-btn" data-amount="custom">Custom</button>
+          </div>
+
+          <div class="custom-amount">
+            <label for="custom-amount">Custom Amount (৳)</label>
+            <input type="number" id="custom-amount" placeholder="Enter amount in Taka" min="50">
+          </div>
+
+          <div class="payment-methods">
+            <h4>Choose Payment Method</h4>
+            <div class="payment-options">
+              <div class="payment-option" data-method="card">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Credit/Debit Card</span>
+              </div>
+              <div class="payment-option" data-method="bkash">
+                <i class="fa-solid fa-mobile-alt bkash-icon"></i>
+                <span>bKash</span>
+              </div>
+              <div class="payment-option" data-method="nogod">
+                <i class="fa-solid fa-wallet nogod-icon"></i>
+                <span>Nogod</span>
+              </div>
+              <div class="payment-option" data-method="bank">
+                <i class="fa-solid fa-university"></i>
+                <span>Bank Transfer</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="donate-btn">
+            <i class="fa-solid fa-heart"></i> Donate Now
+          </button>
+        </div>
+
+        <!-- Monthly Donation -->
+        <div class="donation-card">
+          <h3><i class="fa-solid fa-calendar-check"></i> Monthly Support</h3>
+          
+          <div class="amount-options">
+            <button class="amount-btn" data-amount="200">৳200</button>
+            <button class="amount-btn" data-amount="500">৳500</button>
+            <button class="amount-btn" data-amount="1000">৳1,000</button>
+            <button class="amount-btn" data-amount="2000">৳2,000</button>
+            <button class="amount-btn" data-amount="5000">৳5,000</button>
+            <button class="amount-btn" data-amount="custom">Custom</button>
+          </div>
+
+          <div class="custom-amount">
+            <label for="monthly-amount">Custom Monthly Amount (৳)</label>
+            <input type="number" id="monthly-amount" placeholder="Enter monthly amount" min="100">
+          </div>
+
+          <div class="payment-methods">
+            <h4>Choose Payment Method</h4>
+            <div class="payment-options">
+              <div class="payment-option" data-method="card">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Credit/Debit Card</span>
+              </div>
+              <div class="payment-option" data-method="bkash">
+                <i class="fa-solid fa-mobile-alt bkash-icon"></i>
+                <span>bKash</span>
+              </div>
+              <div class="payment-option" data-method="nogod">
+                <i class="fa-solid fa-wallet nogod-icon"></i>
+                <span>Nogod</span>
+              </div>
+              <div class="payment-option" data-method="bank">
+                <i class="fa-solid fa-university"></i>
+                <span>Bank Transfer</span>
+              </div>
+            </div>
+          </div>
+          
+          <button class="donate-btn">
+            <i class="fa-solid fa-calendar-plus"></i> Start Monthly Support
+          </button>
+        </div>
+      </div>
+
+      <!-- Impact Information -->
+      <div class="impact-info">
+        <h4>Your Impact</h4>
+        <div class="impact-stats">
+          <div class="impact-stat">
+            <span class="number">৳500</span>
+            <span class="text">Provides emergency food for a family of 4 for 3 days</span>
+          </div>
+          <div class="impact-stat">
+            <span class="number">৳1,000</span>
+            <span class="text">Supplies clean water for 10 people for a week</span>
+          </div>
+          <div class="impact-stat">
+            <span class="number">৳5,000</span>
+            <span class="text">Provides emergency shelter materials for a family</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer - Same as original -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="logo-placeholder"></div>
+            <div>
+              <h3>ResQ<span>:</span></h3>
+              <p>Chaos To Control</p>
+            </div>
+          </div>
+          <p>ResQ is dedicated to providing immediate response and long-term recovery solutions for communities affected by natural disasters.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Disaster Updates</a></li>
+            <li><a href="#">How We Help</a></li>
+            <li><a href="volunteerregistration.php">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Emergency Preparedness</a></li>
+            <li><a href="#">Disaster Response Guide</a></li>
+            <li><a href="#">Relief Programs</a></li>
+            <li><a href="#">Training Workshops</a></li>
+            <li><a href="#">Community Resilience</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i> Emergency: +1-800-555-RESQ</li>
+            <li><i class="fa-solid fa-envelope"></i> info@resq-disaster.org</li>
+            <li><i class="fa-solid fa-location-dot"></i> 123 Response Avenue, Resilience City, RC 10001</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 ResQ Disaster Management. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple functionality for amount selection and payment methods
+    document.addEventListener('DOMContentLoaded', function() {
+      // Amount button selection
+      const amountButtons = document.querySelectorAll('.amount-btn');
+      const customInputs = document.querySelectorAll('input[type="number"]');
+      
+      amountButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from siblings
+          this.parentNode.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Handle custom amount
+          if (this.dataset.amount === 'custom') {
+            const customInput = this.closest('.donation-card').querySelector('input[type="number"]');
+            customInput.focus();
+          }
+        });
+      });
+
+      // Payment method selection
+      const paymentOptions = document.querySelectorAll('.payment-option');
+      
+      paymentOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove selected class from siblings
+          this.parentNode.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+          // Add selected class to clicked option
+          this.classList.add('selected');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
