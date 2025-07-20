@@ -1,0 +1,495 @@
+/* 
+   ResQ Disaster Management Website - About Page
+   Additional Stylesheet
+   Colors:
+   - Dark: #141311
+   - Primary: #574537
+   - Gray/Brown: #C1B7AD
+   - Light Gray: #D7D2CF
+   - White/Background: #F7F7F7
+   - Alert: #E53935
+*/
+
+/* Common Section Styling */
+section {
+    padding: 8rem 0;
+    position: relative;
+  }
+  
+  section:nth-child(odd) {
+    background-color: var(--color-white);
+  }
+  
+  section:nth-child(even) {
+    background-color: var(--color-background);
+  }
+  
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 3.6rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 0.3rem;
+    background-color: var(--color-primary);
+  }
+  
+  /* Control to Chaos Section */
+  .control-chaos {
+    padding-top: 12rem;
+  }
+  
+  .control-content {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  .control-content p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+  }
+  
+  /* Our Motto Section */
+  .motto-content {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  .motto-statement {
+    margin-bottom: 3rem;
+  }
+  
+  .motto-statement h3 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
+  }
+  
+  .motto-statement h3::before,
+  .motto-statement h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    height: 1px;
+    background-color: var(--color-secondary);
+  }
+  
+  .motto-statement h3::before {
+    left: -5rem;
+  }
+  
+  .motto-statement h3::after {
+    right: -5rem;
+  }
+  
+  .motto-content p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+  }
+  
+  /* Our Work Section */
+  .work-content {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  .work-content p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+  }
+  
+  /* Impact on Relief Management Section */
+  .diagonal-grid {
+    max-width: 120rem;
+    margin: 5rem auto 0;
+  }
+  
+  .diagonal-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rem;
+    gap: 4rem;
+  }
+  
+  .diagonal-item.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .diagonal-image {
+    flex: 1;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-standard);
+  }
+  
+  .diagonal-image:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .diagonal-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .diagonal-image:hover img {
+    transform: scale(1.05);
+  }
+  
+  .diagonal-content {
+    flex: 1;
+  }
+  
+  .diagonal-content h3 {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+  }
+  
+  .diagonal-content p {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: var(--color-dark);
+  }
+  
+  /* Charts and Statistics */
+  .stat-chart {
+    margin: 3rem 0;
+  }
+  
+  .chart-container {
+    text-align: center;
+  }
+  
+  .chart-caption {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+
+  /* Pie Chart */
+.pie-chart {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(
+    var(--color-primary) 0% 85%, 
+    #f0f0f0 85% 100%
+  );
+  border-radius: 50%;
+}
+
+.pie-chart::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.pie-center {
+  position: relative;
+  z-index: 1;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+  
+ /* Bar Chart */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  height: 20rem;
+  padding: 0 2rem;
+}
+
+.bar-item {
+  width: 5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-item::before {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 0.5rem 0.5rem 0 0;
+  height: 0;
+  animation: barGrow 1.5s ease forwards;
+}
+
+.bar-item[style*="--height: 25%"]::before {
+  animation-name: barGrow25;
+}
+
+.bar-item[style*="--height: 40%"]::before {
+  animation-name: barGrow40;
+}
+
+.bar-item[style*="--height: 65%"]::before {
+  animation-name: barGrow65;
+}
+
+.bar-item[style*="--height: 78%"]::before {
+  animation-name: barGrow78;
+}
+
+@keyframes barGrow25 {
+  to { height: 5rem; }
+}
+
+@keyframes barGrow40 {
+  to { height: 8rem; }
+}
+
+@keyframes barGrow65 {
+  to { height: 13rem; }
+}
+
+@keyframes barGrow78 {
+  to { height: 15.6rem; }
+}
+
+.bar-value {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+}
+
+.bar-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+  
+  /* Progress Chart */
+  .progress-chart {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+  
+  .progress-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .progress-label {
+    width: 12rem;
+    text-align: right;
+    padding-right: 1.5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+  
+  .progress-bar {
+    flex: 1;
+    height: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+    transition: width 1s ease;
+  }
+  
+  .progress-value {
+    width: 5rem;
+    text-align: left;
+    padding-left: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  /* Footer Updates */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 0;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .social-icons a {
+    color: var(--color-light-gray);
+    font-size: 2.4rem;
+    transition: var(--transition-standard);
+  }
+  
+  .social-icons a:hover {
+    color: var(--color-white);
+    transform: translateY(-3px);
+  }
+  
+  /* Active Nav Link */
+  .nav-desktop a.active {
+    color: var(--color-primary);
+    background-color: var(--color-light-gray);
+  }
+  
+  .mobile-menu a.active {
+    background-color: var(--color-light-gray);
+    color: var(--color-primary);
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 992px) {
+    .diagonal-item, 
+    .diagonal-item.reverse {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    
+    .diagonal-image {
+      max-height: 30rem;
+    }
+    
+    .motto-statement h3::before,
+    .motto-statement h3::after {
+      width: 3rem;
+    }
+    
+    .motto-statement h3::before {
+      left: -3rem;
+    }
+    
+    .motto-statement h3::after {
+      right: -3rem;
+    }
+    
+    .section-title {
+      font-size: 3.2rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    section {
+      padding: 6rem 0;
+    }
+    
+    .control-chaos {
+      padding-top: 10rem;
+    }
+    
+    .diagonal-item {
+      margin-bottom: 5rem;
+    }
+    
+    .section-title {
+      font-size: 2.8rem;
+    }
+    
+    .motto-statement h3 {
+      font-size: 2.4rem;
+    }
+    
+    .motto-statement h3::before,
+    .motto-statement h3::after {
+      display: none;
+    }
+    
+    .progress-item {
+      flex-wrap: wrap;
+    }
+    
+    .progress-label {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+    
+    .progress-value {
+      width: auto;
+      margin-left: auto;
+    }
+    
+    .pie-chart, 
+    .bar-chart {
+      transform: scale(0.8);
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .diagonal-content h3 {
+      font-size: 2.4rem;
+    }
+    
+    .pie-chart, 
+    .bar-chart {
+      transform: scale(0.7);
+    }
+    
+    .section-title {
+      font-size: 2.4rem;
+    }
+    
+    .social-icons {
+      gap: 1.5rem;
+    }
+    
+    .social-icons a {
+      font-size: 2rem;
+    }
+  }
